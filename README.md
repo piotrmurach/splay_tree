@@ -1,4 +1,13 @@
 # SplayTree
+[![Gem Version](https://badge.fury.io/rb/splay_tree.png)][gem]
+[![Build Status](https://secure.travis-ci.org/peter-murach/splay_tree.png?branch=master)][travis]
+[![Code Climate](https://codeclimate.com/github/peter-murach/splay_tree.png)][codeclimate]
+[![Coverage Status](https://coveralls.io/repos/peter-murach/splay_tree/badge.png)][coverage]
+
+[gem]: http://badge.fury.io/rb/splay_tree
+[travis]: http://travis-ci.org/peter-murach/splay_tree
+[codeclimate]: https://codeclimate.com/github/peter-murach/splay_tree
+[coverage]: https://coveralls.io/r/peter-murach/splay_tree
 
 > Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.
 
@@ -23,21 +32,52 @@ Or install it yourself as:
 
     $ gem install splay_tree
 
-## Usage
+## 1. Usage
+
+**SplayTree** operations are similar to that of `Hash`:
 
 ```ruby
 tree = SplayTree.new
+tree[:foo] = :bar
+
+tree[:foo]   # => :bar
+tree.size    # => 1
+```
+
+### 1.1 insert
+
+In order to add two elements:
+
+```ruby
 tree['a'] = 1
 tree['b'] = 2
 ```
 
-## Interface
+### 1.2 fetch
 
-### insert
+To read value under key:
 
-### fetch
+```ruby
+tree['a']
+```
 
-### delete
+### 1.3 delete
+
+```ruby
+tree.delete('a')   # => 1
+```
+
+### 1.4 empty?
+
+To check if `tree` contains any elements call `empty?` like so:
+
+```ruby
+tree = SplayTree.new
+tree.empty?   # => true
+
+tree['a'] = 1
+tree.empty?   # => false
+```
 
 ## Contributing
 
