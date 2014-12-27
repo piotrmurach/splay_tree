@@ -120,6 +120,8 @@ class SplayTree
   # Dump the tree structure in bracket format
   # (root left right)
   #
+  # @return [String]
+  #
   # @api public
   def dump
     @root.dump || ''

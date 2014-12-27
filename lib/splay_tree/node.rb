@@ -20,18 +20,34 @@ class SplayTree
       @left = @right = Node::EMPTY
     end
 
+    # @api private
     def empty?
       false
     end
 
+    # Number of nodes in this subtree
+    #
+    # @return [Integer]
+    #
+    # @api private
     def size
       left.size + 1 + right.size
     end
 
+    # Compare node keys
+    #
+    # @return [Integer]
+    #
+    # @api private
     def <=>(other)
       @key <=> other.key
     end
 
+    # Dump the subtree structure starting from this node
+    #
+    # @return [String]
+    #
+    # @api private
     def dump
       left = @left.dump
       right = @right.dump
