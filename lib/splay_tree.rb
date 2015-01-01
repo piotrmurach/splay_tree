@@ -8,6 +8,14 @@ class SplayTree
 
   attr_accessor :default
 
+  attr_accessor :default_proc
+
+  # Create a SplayTree
+  #
+  # @param [Object] default
+  #   the default value for missing key
+  #
+  # @api public
   def initialize(default = UndefinedValue, &block)
     if !UndefinedValue.equal?(default) && block
       fail ArgumentError,
@@ -16,7 +24,7 @@ class SplayTree
     @root  = Node::EMPTY
     @subtree = Node.new(nil, nil)
     @default = default
-    @default_block = block
+    @default_proc = block
   end
 
   # @api public
@@ -133,8 +141,8 @@ class SplayTree
   def default_value
     if @default != UndefinedValue
       @default
-    elsif @default_block
-      @default_block.call
+    elsif @default_proc
+      @default_proc.call
     end
   end
 
