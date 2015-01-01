@@ -43,6 +43,29 @@ class SplayTree
       @key <=> other.key
     end
 
+    # Iterate over subtree nodes
+    #
+    # @api private
+    def each(&block)
+      @left.each(&block)
+      yield [@key, @value]
+      @right.each(&block)
+    end
+
+    # Iterate over subtree nodes
+    #
+    # @api private
+    def each_key(&block)
+      each { |k, v| yield k }
+    end
+
+    # Iterate over subtree nodes
+    #
+    # @api private
+    def each_value(&block)
+      each { |k, v| yield v }
+    end
+
     # Dump the subtree structure starting from this node
     #
     # @return [String]
@@ -121,11 +144,11 @@ class SplayTree
         0
       end
 
-      def to_s
-      end
+      def to_s; end
 
-      def dump
-      end
+      def dump; end
+
+      def each(&block); end
 
       def insert(key, value)
         Node.new(key, value)

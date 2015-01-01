@@ -4,6 +4,8 @@ require 'splay_tree/node'
 require 'splay_tree/version'
 
 class SplayTree
+  include Enumerable
+
   UndefinedValue = Module.new
 
   attr_accessor :default
@@ -37,6 +39,60 @@ class SplayTree
     @root.size
   end
   alias_method :length, :size
+
+  # Call block once for each key
+  #
+  # @api public
+  def each(&block)
+    if block_given?
+      @root.each(&block)
+      self
+    else
+      @root.to_enum
+    end
+  end
+
+  # Call block once for each key passing key as parameter
+  #
+  # @api public
+  def each_key(&block)
+    if block_given?
+      @root.each_key(&block)
+      self
+    else
+      @root.to_enum(:each_key)
+    end
+  end
+
+  # Return a new array of keys
+  #
+  # @return [Array[Object]]
+  #
+  # @api public
+  def keys
+    each_key.to_a
+  end
+
+  # Return a new array of values
+  #
+  # @return [Array[Object]]
+  #
+  # @api public
+  def values
+    each_value.to_a
+  end
+
+  # Call block once for each key passing value as parameter
+  #
+  # @api public
+  def each_value(&block)
+    if block_given?
+      @root.each_value(&block)
+      self
+    else
+      @root.to_enum(:each_value)
+    end
+  end
 
   # Insert a node into a tree with the given key and value
   # provided that the tree does not already contain the key.
