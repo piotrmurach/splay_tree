@@ -8,8 +8,14 @@ class SplayTree
 
   UndefinedValue = Module.new
 
+  # The default value for non existent key
+  #
+  # @api public
   attr_accessor :default
 
+  # The default block for non existent key
+  #
+  # @api public
   attr_accessor :default_proc
 
   # Create a SplayTree
@@ -40,7 +46,18 @@ class SplayTree
   end
   alias_method :length, :size
 
-  # Call block once for each key
+  # Iterate over each key & value pair in the tree
+  #
+  # @example
+  #   tree = SplayTree.new
+  #   tree.each { |key, val| ... }
+  #
+  # @yield [key, value]
+  #
+  # @yieldparam [Object] key
+  # @yieldparam [Object] value
+  #
+  # @return [self]
   #
   # @api public
   def each(&block)
@@ -52,7 +69,17 @@ class SplayTree
     end
   end
 
-  # Call block once for each key passing key as parameter
+  # Iterate over each key in the tree
+  #
+  # @example
+  #   tree = SplayTree.new
+  #   tree.each_key { |key| ... }
+  #
+  # @yield [key]
+  #
+  # @yieldparam [Object] key
+  #
+  # @return [self]
   #
   # @api public
   def each_key(&block)
@@ -64,25 +91,17 @@ class SplayTree
     end
   end
 
-  # Return a new array of keys
+  # Iterate over each value in the tree
   #
-  # @return [Array[Object]]
+  # @example
+  #   tree = SplayTree.new
+  #   tree.each_value { |val| ... }
   #
-  # @api public
-  def keys
-    each_key.to_a
-  end
-
-  # Return a new array of values
+  # @yield [value]
   #
-  # @return [Array[Object]]
+  # @yieldparam [Object] value
   #
-  # @api public
-  def values
-    each_value.to_a
-  end
-
-  # Call block once for each key passing value as parameter
+  # @return [self]
   #
   # @api public
   def each_value(&block)
@@ -92,6 +111,24 @@ class SplayTree
     else
       @root.to_enum(:each_value)
     end
+  end
+
+  # Return a new array of all the keys in the tree
+  #
+  # @return [Array[Object]]
+  #
+  # @api public
+  def keys
+    each_key.to_a
+  end
+
+  # Return a new array of all the values in the tree
+  #
+  # @return [Array[Object]]
+  #
+  # @api public
+  def values
+    each_value.to_a
   end
 
   # Insert a node into a tree with the given key and value
