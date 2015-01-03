@@ -228,6 +228,15 @@ class SplayTree
     @root.dump || ''
   end
 
+  # Export tree as hash
+  #
+  # @return [Hash]
+  #
+  # @api public
+  def to_hash
+    reduce({}) { |acc, (k, v)| acc[k] = v; acc }
+  end
+
   private
 
   # @api private
