@@ -3,11 +3,13 @@
 [![Build Status](https://secure.travis-ci.org/peter-murach/splay_tree.png?branch=master)][travis]
 [![Code Climate](https://codeclimate.com/github/peter-murach/splay_tree.png)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/peter-murach/splay_tree/badge.png)][coverage]
+[![Inline docs](http://inch-ci.org/github/peter-murach/splay_tree.png)][inchpages]
 
 [gem]: http://badge.fury.io/rb/splay_tree
 [travis]: http://travis-ci.org/peter-murach/splay_tree
 [codeclimate]: https://codeclimate.com/github/peter-murach/splay_tree
 [coverage]: https://coveralls.io/r/peter-murach/splay_tree
+[inchpages]: http://inch-ci.org/github/peter-murach/splay_tree
 
 > Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.
 
@@ -32,6 +34,16 @@ Or install it yourself as:
 
     $ gem install splay_tree
 
+## Contents
+
+* [1. Usage](#1-usage)
+  * [1.1 insert](#11-insert)
+  * [1.2 fetch](#12-fetch)
+  * [1.3 default](#13-default)
+  * [1.4 delete](#14-delete)
+  * [1.5 empty?](#15-empty)
+  * [1.6 each](#16-each)
+
 ## 1. Usage
 
 **SplayTree** operations are similar to that of `Hash`:
@@ -46,7 +58,7 @@ tree.size    # => 1
 
 ### 1.1 insert
 
-In order to add element to tree do:
+In order to associate the value with the given key do:
 
 ```ruby
 tree = SplayTree.new
@@ -58,7 +70,7 @@ Note: Inserted key will be subjected to splaying, which means the tree will be r
 
 ### 1.2 fetch
 
-To retrieve a value corresponding to the key do:
+To retrieve a value from the tree corresponding to the key do:
 
 ```ruby
 tree = SplayTree.new
@@ -132,12 +144,11 @@ tree.each { |key, value| puts "#{key}: #{value}" }
 In addition you can use `each_key`, `each_value` to enumerate only keys and values respectively.
 
 ```ruby
-tree = SplayTree.new
-tree.empty?   # => true
-
-tree['a'] = 1
-tree.empty?   # => false
+tree.each_key { |key| ... }
+tree.each_value { |value| ... }
 ```
+
+If no block is provided, an enumerator is returned instead.
 
 ## Contributing
 
