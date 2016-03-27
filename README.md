@@ -1,15 +1,15 @@
 # SplayTree
-[![Gem Version](https://badge.fury.io/rb/splay_tree.png)][gem]
-[![Build Status](https://secure.travis-ci.org/peter-murach/splay_tree.png?branch=master)][travis]
-[![Code Climate](https://codeclimate.com/github/peter-murach/splay_tree.png)][codeclimate]
-[![Coverage Status](https://coveralls.io/repos/peter-murach/splay_tree/badge.png)][coverage]
-[![Inline docs](http://inch-ci.org/github/peter-murach/splay_tree.png)][inchpages]
+[![Gem Version](https://badge.fury.io/rb/splay_tree.svg)][gem]
+[![Build Status](https://secure.travis-ci.org/piotrmurach/splay_tree.svg?branch=master)][travis]
+[![Code Climate](https://codeclimate.com/github/piotrmurach/splay_tree/badges/gpa.svg)][codeclimate]
+[![Coverage Status](https://coveralls.io/repos/piotrmurach/splay_tree/badge.svg)][coverage]
+[![Inline docs](http://inch-ci.org/github/piotrmurach/splay_tree.svg)][inchpages]
 
 [gem]: http://badge.fury.io/rb/splay_tree
-[travis]: http://travis-ci.org/peter-murach/splay_tree
-[codeclimate]: https://codeclimate.com/github/peter-murach/splay_tree
-[coverage]: https://coveralls.io/r/peter-murach/splay_tree
-[inchpages]: http://inch-ci.org/github/peter-murach/splay_tree
+[travis]: http://travis-ci.org/piotrmurach/splay_tree
+[codeclimate]: https://codeclimate.com/github/piotrmurach/splay_tree
+[coverage]: https://coveralls.io/r/piotrmurach/splay_tree
+[inchpages]: http://inch-ci.org/github/piotrmurach/splay_tree
 
 > Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.
 
@@ -152,7 +152,7 @@ If no block is provided, an enumerator is returned instead.
 
 ## Contributing
 
-1. Fork it ( https://github.com/peter-murach/splay_tree/fork )
+1. Fork it ( https://github.com/piotrmurach/splay_tree/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -160,4 +160,4 @@ If no block is provided, an enumerator is returned instead.
 
 ## Copyright
 
-Copyright (c) 2014-2015 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2014-2016 Piotr Murach. See LICENSE for further details.

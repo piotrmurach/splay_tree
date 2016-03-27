@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = [""]
   spec.summary       = %q{A self-balancing binary tree with amortized access.}
   spec.description   = %q{Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.}
-  spec.homepage      = "https://github.com/peter-murach/splay_tree"
+  spec.homepage      = "https://github.com/piotrmurach/splay_tree"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
