@@ -2,13 +2,13 @@
 [![Gem Version](https://badge.fury.io/rb/splay_tree.svg)][gem]
 [![Build Status](https://secure.travis-ci.org/piotrmurach/splay_tree.svg?branch=master)][travis]
 [![Code Climate](https://codeclimate.com/github/piotrmurach/splay_tree/badges/gpa.svg)][codeclimate]
-[![Coverage Status](https://coveralls.io/repos/piotrmurach/splay_tree/badge.svg)][coverage]
+[![Coverage Status](https://coveralls.io/repos/github/piotrmurach/splay_tree/badge.svg?branch=master)][coverage]
 [![Inline docs](http://inch-ci.org/github/piotrmurach/splay_tree.svg)][inchpages]
 
 [gem]: http://badge.fury.io/rb/splay_tree
 [travis]: http://travis-ci.org/piotrmurach/splay_tree
 [codeclimate]: https://codeclimate.com/github/piotrmurach/splay_tree
-[coverage]: https://coveralls.io/r/piotrmurach/splay_tree
+[coverage]: https://coveralls.io/github/piotrmurach/splay_tree
 [inchpages]: http://inch-ci.org/github/piotrmurach/splay_tree
 
 > Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.
