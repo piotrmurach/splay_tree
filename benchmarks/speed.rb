@@ -1,8 +1,9 @@
-# coding: utf-8
+# frozen_string_literal: true
 
 require 'benchmark/ips'
-require 'splay_tree'
 require 'securerandom'
+
+require_relative '../lib/splay_tree'
 
 def generate_key(size)
   SecureRandom.hex(size)
