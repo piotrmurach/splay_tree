@@ -1,13 +1,16 @@
 # SplayTree
+
 [![Gem Version](https://badge.fury.io/rb/splay_tree.svg)][gem]
 [![Build Status](https://secure.travis-ci.org/piotrmurach/splay_tree.svg?branch=master)][travis]
-[![Code Climate](https://codeclimate.com/github/piotrmurach/splay_tree/badges/gpa.svg)][codeclimate]
+[![Build status](https://ci.appveyor.com/api/projects/status/smfi5r38ihtn9gom?svg=true)][appveyor]
+[![Maintainability](https://api.codeclimate.com/v1/badges/32d2351f6c349a58d8da/maintainability)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/github/piotrmurach/splay_tree/badge.svg?branch=master)][coverage]
 [![Inline docs](http://inch-ci.org/github/piotrmurach/splay_tree.svg)][inchpages]
 
 [gem]: http://badge.fury.io/rb/splay_tree
 [travis]: http://travis-ci.org/piotrmurach/splay_tree
-[codeclimate]: https://codeclimate.com/github/piotrmurach/splay_tree
+[appveyor]: https://ci.appveyor.com/project/piotrmurach/splay-tree
+[codeclimate]: https://codeclimate.com/github/piotrmurach/splay_tree/maintainability
 [coverage]: https://coveralls.io/github/piotrmurach/splay_tree
 [inchpages]: http://inch-ci.org/github/piotrmurach/splay_tree
 
@@ -160,4 +163,4 @@ If no block is provided, an enumerator is returned instead.
 
 ## Copyright
 
-Copyright (c) 2014-2016 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2014 Piotr Murach. See LICENSE for further details.
