@@ -1,7 +1,7 @@
-# coding: utf-8
+# frozen_string_literal: true
 
-require 'splay_tree/node'
-require 'splay_tree/version'
+require_relative 'splay_tree/node'
+require_relative 'splay_tree/version'
 
 class SplayTree
   include Enumerable
@@ -26,10 +26,10 @@ class SplayTree
   # @api public
   def initialize(default = UndefinedValue, &block)
     if !UndefinedValue.equal?(default) && block
-      fail ArgumentError,
-           'You need to pas seither argument or a block as a default value'
+      raise ArgumentError,
+            "You need to pass either argument or a block as a default value"
     end
-    @root  = Node::EMPTY
+    @root    = Node::EMPTY
     @subtree = Node.new(nil, nil)
     @default = default
     @default_proc = block
@@ -44,7 +44,7 @@ class SplayTree
   def size
     @root.size
   end
-  alias_method :length, :size
+  alias length size
 
   # Iterate over each key & value pair in the tree
   #
@@ -153,7 +153,7 @@ class SplayTree
 
     splay(key)
   end
-  alias_method :insert, :[]=
+  alias insert []=
 
   # Find object by the key
   #
@@ -168,7 +168,7 @@ class SplayTree
 
     @root.value
   end
-  alias_method :fetch, :[]
+  alias fetch []
 
   # Check if tree contains a node with a matching key.
   #
@@ -177,6 +177,7 @@ class SplayTree
   # @api public
   def key?(key)
     return false if @root.empty?
+
     splay(key)
     @root.key == key
   end
