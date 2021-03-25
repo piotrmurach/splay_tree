@@ -1,37 +1,37 @@
-# coding: utf-8
+# frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-RSpec.describe SplayTree, '.each' do
+RSpec.describe SplayTree, "#each" do
   subject(:tree) { described_class.new }
 
   before {
-    tree['a'] = 1
-    tree['b'] = 2
-    tree['c'] = 3
+    tree["a"] = 1
+    tree["b"] = 2
+    tree["c"] = 3
   }
 
   it "enumartes all pairs" do
     yielded = []
     expect {
       tree.each { |k, v| yielded << [k, v] }
-    }.to change { yielded }.from([]).to([['a', 1], ['b', 2], ['c', 3]])
+    }.to change { yielded }.from([]).to([["a", 1], ["b", 2], ["c", 3]])
     expect(tree.to_a).to eq(yielded)
   end
 
   it "returns enumerator for all pairs without block" do
-    expect(tree.each.to_a).to eq([['a', 1], ['b', 2], ['c', 3]])
+    expect(tree.each.to_a).to eq([["a", 1], ["b", 2], ["c", 3]])
   end
 
   it "enumerates all keys" do
     yielded = []
     expect {
       tree.each_key { |k| yielded << k }
-    }.to change { yielded }.from([]).to(['a', 'b', 'c'])
+    }.to change { yielded }.from([]).to(%w[a b c])
   end
 
   it "returns enumerator for all keys without block" do
-    expect(tree.each_key.to_a).to eq(['a', 'b', 'c'])
+    expect(tree.each_key.to_a).to eq(%w[a b c])
   end
 
   it "enumerates all values" do
@@ -46,7 +46,7 @@ RSpec.describe SplayTree, '.each' do
   end
 
   it "populates all keys" do
-    expect(tree.keys).to eq(['a', 'b', 'c'])
+    expect(tree.keys).to eq(%w[a b c])
   end
 
   it "populates all values" do
