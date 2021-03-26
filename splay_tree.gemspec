@@ -12,9 +12,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/piotrmurach/splay_tree"
   spec.license       = "MIT"
 
-  spec.files         = Dir['{lib,spec,benchmarks}/**/*.rb']
-  spec.files        += Dir['tasks/*', 'splay_tree.gemspec']
-  spec.files        += Dir['README.md', 'CHANGELOG.md', 'LICENSE.txt', 'Rakefile']
+  spec.files         = Dir["lib/**/*"]
+  spec.extra_rdoc_files = ["README.md", "CHANGELOG.md", "LICENSE.txt"]
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = '>= 2.0.0'
