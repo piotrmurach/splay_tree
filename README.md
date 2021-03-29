@@ -18,7 +18,7 @@
 
 ## Features
 
-* Familiar hash like access
+* Familiar `Hash` like access
 * Easy instantiation with default value
 
 ## Installation
@@ -26,7 +26,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'splay_tree'
+gem "splay_tree"
 ```
 
 And then execute:
@@ -61,97 +61,109 @@ tree.size    # => 1
 
 ### 1.1 insert
 
-In order to associate the value with the given key do:
+To assign a value to a given key do the following:
 
 ```ruby
 tree = SplayTree.new
-tree["a"] = 1
-tree["b"] = 2
+tree[:foo] = 1
+tree[:bar] = 2
 ```
 
-Note: Inserted key will be subjected to splaying, which means the tree will be rearranged to help with quicker access on subsequent calls.
+Note: The inserted key will be subjected to splaying, which means the tree will be rearranged to help with quicker access on subsequent calls.
 
 ### 1.2 fetch
 
-To retrieve a value from the tree corresponding to the key do:
+To retrieve a value at a given key do:
 
 ```ruby
 tree = SplayTree.new
-tree["a"]    #  => nil
+tree[:foo]    #  => nil
 
-tree["a"] = 1
-tree["a"]    #  => 1
+tree[:foo] = 1
+tree[:foo]    #  => 1
 ```
 
 Note: Frequently accessed keys will move nearer to the root where they can be accessed more quickly.
 
 ### 1.3 default
 
-**SplayTree** allows you to set default value if key does not exist. This can be done during initialization or using `default` method:
+You can set a default value for a missing key. This can be done during initialization:
 
 ```ruby
 tree = SplayTree.new
 tree.default          # => UndefinedValue
 
-tree = SplayTree.new("foo")
-tree.default          # => "foo"
-tree["a"]             # => "foo"
+tree = SplayTree.new(1)
+tree.default          # => 1
+tree[:foo]            # => 1
 ```
 
-You can also use block to set default value:
+Or using `default` method:
+
+```ruby
+tree = SplayTree.new
+tree.default = 1
+
+tree[:foo] # => 1
+```
+
+You can also use a block to set the default value:
 
 ```ruby
 tree = SplayTree.new
 tree.default_proc    # => nil
 
-tree = SplayTree.new { "foo" }
-tree.default_proc    # => "foo"
-tree["a"]            # => "foo"
+tree = SplayTree.new { 1 }
+tree.default_proc    # => 1
+tree[:foo]           # => 1
 ```
 
 ### 1.4 delete
 
-In order to remove an entry from the splay tree use `delete`. If the value is not found the default value is returned and `nil` otherwise.
+In order to remove an entry from a splay tree use `delete` method. If a key is not found, the default value is returned, otherwise `nil`.
 
 ```ruby
 tree = SplayTree.new
-tree['a'] = 1
-tree.delete('a')   # => 1
-tree.delete('z')   # => nil
+tree[:foo] = 1
+tree.delete(:foo)   # => 1
+tree.delete(:bar)   # => nil
 ```
 
 ### 1.5 empty?
 
-To check if `tree` contains any elements call `empty?` like so:
+Use `empty?` to check if a tree contains any elements:
 
 ```ruby
 tree = SplayTree.new
 tree.empty?   # => true
 
-tree["a"] = 1
+tree[:foo] = 1
 tree.empty?   # => false
 ```
 
 ### 1.6 each
 
-In order to iterate over all tree nodes use `each` method like so:
+Use `each` method to iterate over all tree nodes like so:
 
 ```ruby
 tree = SplayTree.new
-tree['a'] = 1
-tree['b'] = 2
+tree[:foo] = 1
+tree[:bar] = 2
 
 tree.each { |key, value| puts "#{key}: #{value}" }
+# =>
+# bar: 2
+# foo: 1
 ```
 
-In addition you can use `each_key`, `each_value` to enumerate only keys and values respectively.
+You can also use `each_key` and `each_value` to enumerate only keys or values:
 
 ```ruby
 tree.each_key { |key| ... }
 tree.each_value { |value| ... }
 ```
 
-If no block is provided, an enumerator is returned instead.
+If no block is given, an enumerator is returned instead.
 
 ## Contributing
 
