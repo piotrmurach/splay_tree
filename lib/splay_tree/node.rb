@@ -55,15 +55,15 @@ class SplayTree
     # Iterate over subtree nodes
     #
     # @api private
-    def each_key(&block)
-      each { |k, v| yield k }
+    def each_key
+      each { |k, _| yield k }
     end
 
     # Iterate over subtree nodes
     #
     # @api private
-    def each_value(&block)
-      each { |k, v| yield v }
+    def each_value
+      each { |_, v| yield v }
     end
 
     # Dump the subtree structure starting from this node
@@ -75,9 +75,9 @@ class SplayTree
       left = @left.dump
       right = @right.dump
       if !@left.empty? || !@right.empty?
-        '(' + [@key, left || '-', right || '-'].compact.join(' ') + ')'
+        "(" + [@key, left || "-", right || "-"].compact.join(" ") + ")"
       else
-        @key || ''
+        @key || ""
       end
     end
 
@@ -128,12 +128,12 @@ class SplayTree
         @right = @right.insert(key, value)
         rotate_left
       else
-        fail TypeError, "Cannot compare: #{key} with #{@key}"
+        raise TypeError, "Cannot compare: #{key} with #{@key}"
       end
     end
 
     class EmptyNode < Node
-      def initialize
+      def initialize(*)
       end
 
       def empty?

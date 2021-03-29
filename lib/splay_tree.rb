@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'splay_tree/node'
-require_relative 'splay_tree/version'
+require_relative "splay_tree/node"
+require_relative "splay_tree/version"
 
 class SplayTree
   include Enumerable
@@ -195,8 +195,10 @@ class SplayTree
   # @api public
   def delete(key)
     return if empty?
+
     splay(key)
     return if @root.key != key
+
     deleted = @root
     right = @root.right
     @root = @root.left
@@ -226,7 +228,7 @@ class SplayTree
   #
   # @api public
   def dump
-    @root.dump || ''
+    @root.dump || ""
   end
 
   # Export tree as hash
@@ -235,7 +237,7 @@ class SplayTree
   #
   # @api public
   def to_hash
-    reduce({}) { |acc, (k, v)| acc[k] = v; acc }
+    each_with_object({}) { |(k, v), acc| acc[k] = v }
   end
 
   private
@@ -261,8 +263,10 @@ class SplayTree
     @subtree.left = @subtree.right = Node::EMPTY
     loop do
       break if key == current.key
+
       if key < current.key
         break if current.left.empty?
+
         if key < current.left.key
           current = current.rotate_right
           break if current.left.empty?
@@ -272,6 +276,7 @@ class SplayTree
         current = current.left
       elsif key > current.key
         break if current.right.empty?
+
         if key > current.right.key
           current = current.rotate_left
           break if current.right.empty?
