@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'benchmark/ips'
-require 'securerandom'
+require "benchmark/ips"
+require "securerandom"
 
-require_relative '../lib/splay_tree'
+require_relative "../lib/splay_tree"
 
 def generate_key(size)
   SecureRandom.hex(size)
