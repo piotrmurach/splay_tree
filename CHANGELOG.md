@@ -1,5 +1,11 @@
 # Change log
 
+## [v0.4.0] - 2021-03-29
+
+### Changed
+* Change gemspec to remove test and rake files to reduce gem size
+* Change to remove bundler as a dev dependency and relax rspec upper constraint
+
 ## [v0.3.0] - 2019-02-26
 
 * Change to limit to Ruby >= 2.0.0
@@ -16,6 +22,7 @@
 
 * Initial implementation and release
 
+[v0.4.0]: https://github.com/piotrmurach/splay_tree/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/piotrmurach/splay_tree/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/piotrmurach/splay_tree/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/piotrmurach/splay_tree/compare/v0.1.0
