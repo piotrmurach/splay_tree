@@ -55,8 +55,8 @@ Or install it yourself as:
 tree = SplayTree.new
 tree[:foo] = :bar
 
-tree[:foo]   # => :bar
-tree.size    # => 1
+tree[:foo]  # => :bar
+tree.size   # => 1
 ```
 
 ### 1.1 insert
@@ -77,10 +77,10 @@ To retrieve a value at a given key do:
 
 ```ruby
 tree = SplayTree.new
-tree[:foo]    #  => nil
+tree[:foo]  #  => nil
 
 tree[:foo] = 1
-tree[:foo]    #  => 1
+tree[:foo]  #  => 1
 ```
 
 Note: Frequently accessed keys will move nearer to the root where they can be accessed more quickly.
@@ -91,11 +91,11 @@ You can set a default value for a missing key. This can be done during initializ
 
 ```ruby
 tree = SplayTree.new
-tree.default          # => UndefinedValue
+tree.default  # => UndefinedValue
 
 tree = SplayTree.new(1)
-tree.default          # => 1
-tree[:foo]            # => 1
+tree.default  # => 1
+tree[:foo]    # => 1
 ```
 
 Or using `default` method:
@@ -111,11 +111,11 @@ You can also use a block to set the default value:
 
 ```ruby
 tree = SplayTree.new
-tree.default_proc    # => nil
+tree.default_proc  # => nil
 
 tree = SplayTree.new { 1 }
-tree.default_proc    # => 1
-tree[:foo]           # => 1
+tree.default_proc  # => #<Proc...>
+tree[:foo]         # => 1
 ```
 
 ### 1.4 delete
@@ -125,8 +125,8 @@ In order to remove an entry from a splay tree use `delete` method. If a key is n
 ```ruby
 tree = SplayTree.new
 tree[:foo] = 1
-tree.delete(:foo)   # => 1
-tree.delete(:bar)   # => nil
+tree.delete(:foo)  # => 1
+tree.delete(:bar)  # => nil
 ```
 
 ### 1.5 empty?
@@ -135,10 +135,10 @@ Use `empty?` to check if a tree contains any elements:
 
 ```ruby
 tree = SplayTree.new
-tree.empty?   # => true
+tree.empty?  # => true
 
 tree[:foo] = 1
-tree.empty?   # => false
+tree.empty?  # => false
 ```
 
 ### 1.6 each
