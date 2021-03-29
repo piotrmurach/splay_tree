@@ -14,7 +14,7 @@
 [coverage]: https://coveralls.io/github/piotrmurach/splay_tree
 [inchpages]: http://inch-ci.org/github/piotrmurach/splay_tree
 
-> Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.
+> A self-balancing binary tree optimised for fast access to frequently used nodes. Useful for implementing caches and garbage collection algorithms.
 
 ## Features
 
