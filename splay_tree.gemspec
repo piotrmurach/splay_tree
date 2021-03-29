@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = SplayTree::VERSION
   spec.authors       = ["Piotr Murach"]
   spec.email         = ["piotr@piotrmurach.com"]
-  spec.summary       = %q{A self-balancing binary tree with amortized access.}
-  spec.description   = %q{Self balancing binary tree that keeps lookup operations fast by optimizing frequently accessed keys. Useful for implementing caches and garbage collection algorithms.}
+  spec.summary       = %q{A self-balancing binary tree optimised for fast access to frequently used nodes.}
+  spec.description   = %q{A self-balancing binary tree optimised for fast access to frequently used nodes. Useful for implementing caches and garbage collection algorithms.}
   spec.homepage      = "https://github.com/piotrmurach/splay_tree"
   spec.license       = "MIT"
   if spec.respond_to?(:metadata)
