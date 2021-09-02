@@ -5,14 +5,14 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/smfi5r38ihtn9gom?svg=true)][appveyor]
 [![Maintainability](https://api.codeclimate.com/v1/badges/32d2351f6c349a58d8da/maintainability)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/github/piotrmurach/splay_tree/badge.svg?branch=master)][coverage]
-[![Inline docs](http://inch-ci.org/github/piotrmurach/splay_tree.svg)][inchpages]
+[![Inline docs](https://inch-ci.org/github/piotrmurach/splay_tree.svg)][inchpages]
 
-[gem]: http://badge.fury.io/rb/splay_tree
+[gem]: https://badge.fury.io/rb/splay_tree
 [gh_actions_ci]: https://github.com/piotrmurach/splay_tree/actions?query=workflow%3ACI
 [appveyor]: https://ci.appveyor.com/project/piotrmurach/splay-tree
 [codeclimate]: https://codeclimate.com/github/piotrmurach/splay_tree/maintainability
 [coverage]: https://coveralls.io/github/piotrmurach/splay_tree
-[inchpages]: http://inch-ci.org/github/piotrmurach/splay_tree
+[inchpages]: https://inch-ci.org/github/piotrmurach/splay_tree
 
 > A self-balancing binary tree optimised for fast access to frequently used nodes. Useful for implementing caches and garbage collection algorithms.
 
